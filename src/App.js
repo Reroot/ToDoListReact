@@ -3,9 +3,26 @@ import "./App.css";
 import toDoData from "./toDoData";
 import TodoItem from "./TodoItem";
 
+//state is a way for a componet to maintain and change it's own data if it needs to
+//rather than props where we are just passing in data. for state to be used
+//the component needs to be a class based component, component need component
+//they initialize the values in the class, they can inherit from the superclass of react componet
+
 export class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			answer: "This is a state check"
+		};
+	}
+
 	render() {
-		return <div>{toDoItemsArray}</div>;
+		return (
+			<div>
+				{toDoItemsArray}
+				{this.state.answer}
+			</div>
+		);
 	}
 }
 
