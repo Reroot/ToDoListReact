@@ -16,14 +16,7 @@ export class App extends Component {
 			name: "Artem",
 			age: "26",
 			answer: "This is a state check",
-			log: false
-		};
-
-		this.state = {
-			name: "Sally",
-			age: "26",
-			answer: "This is a state check 2",
-			log: false
+			log: true
 		};
 	}
 	//passing down state is like passing down props within a componet tag</>
@@ -32,12 +25,15 @@ export class App extends Component {
 		let wordDisplay;
 		if (this.state.log === false) {
 			wordDisplay = "logged false as out";
+		} else {
+			wordDisplay = "logged false as in";
 		}
 
 		return (
 			<div>
 				{toDoItemsArray}
-				<h1>{this.state.log ? this.state.name : wordDisplay}</h1>
+				<h1>{this.state.log ? this.state.name : this.state.answer}</h1>
+				<h1>{wordDisplay}</h1>
 
 				<h1>{this.state.age}</h1>
 			</div>
