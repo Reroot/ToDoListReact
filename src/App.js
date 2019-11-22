@@ -12,6 +12,8 @@ export class App extends Component {
 	constructor() {
 		super();
 		this.state = {
+			name: "Artem",
+			age: "26",
 			answer: "This is a state check"
 		};
 	}
@@ -22,6 +24,8 @@ export class App extends Component {
 			<div>
 				{toDoItemsArray}
 				<h1>{this.state.answer}</h1>
+				<h1>{this.state.name}</h1>
+				<h1>{this.state.age}</h1>
 			</div>
 		);
 	}
