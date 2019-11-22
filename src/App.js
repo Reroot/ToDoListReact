@@ -29,11 +29,16 @@ export class App extends Component {
 	//passing down state is like passing down props within a componet tag</>
 	//the difference is the reference to the this keyword
 	render() {
+		let wordDisplay;
+		if (this.state.log === false) {
+			wordDisplay = "logged false as out";
+		}
+
 		return (
 			<div>
 				{toDoItemsArray}
-				<h1>{this.state.log ? this.state.name : console.log("out")}</h1>
-				<h1>{this.state.log}</h1>
+				<h1>{this.state.log ? this.state.name : wordDisplay}</h1>
+
 				<h1>{this.state.age}</h1>
 			</div>
 		);
