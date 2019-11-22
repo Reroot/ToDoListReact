@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import toDoData from "./toDoData";
 import TodoItem from "./TodoItem";
+import { setTimeout } from "core-js";
+
+//conditional rendering
 
 //state is a way for a componet to maintain and change it's own data if it needs to
 //rather than props where we are just passing in data. for state to be used
@@ -13,16 +16,26 @@ export class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			count: 0
+			count: 0,
+			isLoading: true
 		};
 
 		this.handelClick = this.handelClick.bind(this);
 		// this.state = {
 		// 	name: "Artem",
 		// 	age: "26",
-		// 	answer: "This is a state check",
+		// 	answer: "This i
+		//  a state check",
 		// 	log: true
 		// };
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({
+				isLoading: false
+			});
+		}, 1000);
 	}
 	handelClick() {
 		this.setState((prevState) => {
@@ -45,6 +58,9 @@ export class App extends Component {
 			<div>
 				<h1>{this.state.count}</h1>
 				<button onClick={this.handelClick}>Change</button>
+				<h1>
+					{this.state.isLoading ? console.log("true") : console.log("false")}
+				</h1>
 				{/* {toDoItemsArray}
 				<h1>{this.state.log ? this.state.name : this.state.answer}</h1>
 				<h1>{wordDisplay}</h1>
