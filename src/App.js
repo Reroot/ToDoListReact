@@ -13,29 +13,42 @@ export class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: "Artem",
-			age: "26",
-			answer: "This is a state check",
-			log: true
+			count: 0
 		};
+
+		this.handelClick = this.handelClick.bind(this);
+		// this.state = {
+		// 	name: "Artem",
+		// 	age: "26",
+		// 	answer: "This is a state check",
+		// 	log: true
+		// };
 	}
+	handelClick() {
+		this.setState((prevState) => {
+			return {
+				count: prevState.count + 1
+			};
+		});
+	}
+
 	//passing down state is like passing down props within a componet tag</>
 	//the difference is the reference to the this keyword
 	render() {
-		let wordDisplay;
-		if (this.state.log === false) {
-			wordDisplay = "logged false as out";
-		} else {
-			wordDisplay = "logged false as in";
-		}
-
+		// let wordDisplay;
+		// if (this.state.log === false) {
+		// 	wordDisplay = "logged false as out";
+		// } else {
+		// 	wordDisplay = "logged false as in";
+		// }
 		return (
 			<div>
-				{toDoItemsArray}
+				<h1>{this.state.count}</h1>
+				<button onClick={this.handelClick}>Change</button>
+				{/* {toDoItemsArray}
 				<h1>{this.state.log ? this.state.name : this.state.answer}</h1>
 				<h1>{wordDisplay}</h1>
-
-				<h1>{this.state.age}</h1>
+				<h1>{this.state.age}</h1> */}
 			</div>
 		);
 	}
