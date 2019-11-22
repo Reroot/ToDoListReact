@@ -9,12 +9,21 @@ import TodoItem from "./TodoItem";
 //they initialize the values in the class, they can inherit from the superclass of react componet
 
 export class App extends Component {
+	//need for state
 	constructor() {
 		super();
 		this.state = {
 			name: "Artem",
 			age: "26",
-			answer: "This is a state check"
+			answer: "This is a state check",
+			log: false
+		};
+
+		this.state = {
+			name: "Sally",
+			age: "26",
+			answer: "This is a state check 2",
+			log: false
 		};
 	}
 	//passing down state is like passing down props within a componet tag</>
@@ -23,8 +32,8 @@ export class App extends Component {
 		return (
 			<div>
 				{toDoItemsArray}
-				<h1>{this.state.answer}</h1>
-				<h1>{this.state.name}</h1>
+				<h1>{this.state.log ? this.state.name : console.log("out")}</h1>
+				<h1>{this.state.log}</h1>
 				<h1>{this.state.age}</h1>
 			</div>
 		);
