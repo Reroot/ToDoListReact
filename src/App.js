@@ -15,12 +15,13 @@ export class App extends Component {
 			answer: "This is a state check"
 		};
 	}
-
+	//passing down state is like passing down props within a componet tag</>
+	//the difference is the reference to the this keyword
 	render() {
 		return (
 			<div>
 				{toDoItemsArray}
-				{this.state.answer}
+				<h1>{this.state.answer}</h1>
 			</div>
 		);
 	}
