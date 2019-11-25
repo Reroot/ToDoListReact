@@ -61,8 +61,8 @@ export class App extends Component {
 				<h1>
 					{this.state.isLoading ? console.log("true") : console.log("false")}
 				</h1>
-				{/* {toDoItemsArray}
-				<h1>{this.state.log ? this.state.name : this.state.answer}</h1>
+				{toDoItemsArray}
+				{/* <h1>{this.state.log ? this.state.name : this.state.answer}</h1>
 				<h1>{wordDisplay}</h1>
 				<h1>{this.state.age}</h1> */}
 			</div>
